@@ -2,7 +2,6 @@ package com.ccristian.springboot.springmvc.app.services;
 
 import com.ccristian.springboot.springmvc.app.entities.User;
 import com.ccristian.springboot.springmvc.app.repositories.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

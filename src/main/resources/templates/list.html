@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}"></title>
+</head>
+<body>
+<div>
+    <h3 th:text="${title}"></h3>
+
+    <a th:href="@{users/form}" th:text="'CREAR user (+)'"></a>
+    <div th:text="'NO HAY usuarios en el sistema!'" th:if="${#lists.isEmpty(users)}"></div>
+    <table th:if="${not #lists.isEmpty(users)}">
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>lastname</th>
+            <th>email</th>
+            <th>createdAt</th>
+            <th>edit</th>
+            <th>remove</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="user : ${users}">
+            <td th:text="${user.id}"></td>
+            <td th:text="${user.name}"></td>
+            <td th:text="${user.lastname}"></td>
+            <td th:text="${user.email}"></td>
+            <td th:text="${user.createdAt}"></td>
+            <td><a th:href="@{users/form/{id}(id=${user.id})}">edit</a></td>
+            <td><a th:href="@{users/delete/{id}(id=${user.id})}">remove</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
