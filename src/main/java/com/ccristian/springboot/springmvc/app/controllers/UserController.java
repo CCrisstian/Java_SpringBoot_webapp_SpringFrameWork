@@ -2,18 +2,19 @@ package com.ccristian.springboot.springmvc.app.controllers;
 
 import com.ccristian.springboot.springmvc.app.entities.User;
 import com.ccristian.springboot.springmvc.app.services.UserService;
+import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.Optional;
 
 @Controller
 @RequestMapping("/users")
+@SessionAttributes({"user"})
 public class UserController {
 
     private final UserService service;
@@ -58,11 +59,18 @@ public class UserController {
     }
 
     @PostMapping
-    public String form(User user, Model model, RedirectAttributes redirect) {
-        String message = user.getId()!= null && user.getId() > 0 ?
+    public String form(@Valid User user, BindingResult result, Model model, RedirectAttributes redirect, SessionStatus status) {
+
+        if (result.hasErrors()) {
+            model.addAttribute("title", "Validando Formulario");
+            return "form";
+        }
+
+        String message = user.getId() != null && user.getId() > 0 ?
                 "El usuario: " + user.getName() + " se ha ACTUALIZADO con éxito!"
                 : "El usuario: " + user.getName() + " se ha CREADO con éxito!";
         service.save(user);
+        status.setComplete();
         redirect.addFlashAttribute("success", message);
         return "redirect:/users";
     }

@@ -1,6 +1,9 @@
 package com.ccristian.springboot.springmvc.app.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
 
 import java.time.LocalDateTime;
 
@@ -9,13 +12,20 @@ import java.time.LocalDateTime;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotEmpty
     private String name;
+    @NotEmpty
     private String lastname;
+    @NotEmpty
+    @Email
     private String email;
+    @NotEmpty
+    @Size(min = 4, max = 16)
     private String username;
+    @NotEmpty
     private String password;
 
     @Column(name = "created_at")
@@ -33,6 +43,7 @@ public class User {
     public void prePersist() {
         this.createdAt = LocalDateTime.now();
     }
+
     public Long getId() {
         return id;
     }
