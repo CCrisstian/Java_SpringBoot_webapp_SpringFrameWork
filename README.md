@@ -27,6 +27,14 @@
 - <b>Flexibilidad y modularidad</b>: Es modular, por lo que se puede usar solo los componentes que se necesitan (por ejemplo, Spring MVC, Spring Data, Spring Security, etc.).
 - <b>Compatibilidad con múltiples entornos</b>: Funciona tanto para aplicaciones locales como distribuidas, en la nube o microservicios.
 
+<h3>¿Para qué se usa?</h3>
+
+- <b>Desarrollo de aplicaciones empresariales</b>: Proyectos complejos que requieren escalabilidad y robustez.
+- <b>Creación de APIs y servicios web</b>: Desarrollo de aplicaciones RESTful y SOAP.
+- <b>Microservicios</b>: Base para el desarrollo de arquitecturas modernas gracias a su soporte para Spring Boot.
+- <b>Gestión de transacciones y datos</b>: Manejo de bases de datos y operaciones transaccionales de manera segura.
+- <b>Seguridad</b>: Implementación de autenticación y autorización en aplicaciones con Spring Security.
+
 <h3>Diferencias clave entre Spring Boot y Spring Framework</h3>
 
 | **Aspecto**               | **Spring Framework**                           | **Spring Boot**                                    |
