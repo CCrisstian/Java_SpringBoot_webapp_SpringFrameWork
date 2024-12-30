@@ -6,7 +6,6 @@ import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "users")
@@ -18,14 +17,18 @@ public class User {
 
     @NotEmpty
     private String name;
+
     @NotEmpty
     private String lastname;
+
     @NotEmpty
     @Email
     private String email;
+
     @NotEmpty
     @Size(min = 4, max = 16)
     private String username;
+
     @NotEmpty
     private String password;
 

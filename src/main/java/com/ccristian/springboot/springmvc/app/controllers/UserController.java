@@ -69,7 +69,9 @@ public class UserController {
         String message = user.getId() != null && user.getId() > 0 ?
                 "El usuario: " + user.getName() + " se ha ACTUALIZADO con éxito!"
                 : "El usuario: " + user.getName() + " se ha CREADO con éxito!";
+
         service.save(user);
+
         status.setComplete();
         redirect.addFlashAttribute("success", message);
         return "redirect:/users";
