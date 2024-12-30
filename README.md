@@ -71,17 +71,17 @@
     - **com.ccristian.springboot.springmvc.app**
       - **Application.java**: Clase principal que inicia la aplicación Spring Boot. Contiene el método `main` que ejecuta `SpringApplication.run()`, arrancando el servidor y configurando el contexto de la aplicación.
       - **controllers**
-        - UserController.java
+        - UserController.java: Controlador que maneja las solicitudes HTTP relacionadas con los usuarios. Contiene métodos para listar, crear, editar, eliminar y visualizar usuarios. Utiliza `UserService` para interactuar con la base de datos y las vistas Thymeleaf para mostrar los datos al usuario. Implementa validaciones en los formularios de creación y edición de usuarios.
       - **entities**
-        - User.java
+        - User.java: Entidad que representa a un usuario en la aplicación. Contiene atributos y está mapeada a la tabla `users` en la base de datos. Incluye validaciones sobre los campos y además, define un método `prePersist()` que establece la fecha de creación antes de insertar un nuevo usuario en la base de datos.
      - **repositories**
-       - UserRepository.java
+       - UserRepository.java: Interfaz que extiende `CrudRepository` de Spring Data JPA, proporcionando métodos CRUD básicos para interactuar con la base de datos y realizar operaciones sobre la entidad `User`. No es necesario implementar los métodos, ya que Spring Data JPA los genera automáticamente.
      - **services**
-       - UserService.java
-       - UserServiceImpl.java
+       - UserService.java: Interfaz que define los métodos para la lógica de negocio relacionada con los usuarios.
+       - UserServiceImpl.java: Implementación de la interfaz `UserService`. Esta clase maneja la lógica de negocio relacionada con los usuarios. Utiliza `UserRepository` para interactuar con la base de datos. Los métodos están anotados con `@Transactional` para garantizar la gestión adecuada de las transacciones.
   - **resources**
     - **templates**
-      - form.html
-      - list.html
-      - view.html
+      - form.html: Vista que muestra un formulario para crear o editar un usuario. Utiliza Thymeleaf para el enlazado dinámico de datos con el objeto `user`.
+      - list.html: Vista que muestra una lista de usuarios en una tabla. Utiliza Thymeleaf para mostrar dinámicamente la información de los usuarios. Además, ofrece opciones para editar o eliminar cada usuario. También incluye alertas para mostrar mensajes de éxito o error.
+      - view.html: Vista que muestra los detalles de un usuario. Utiliza Thymeleaf para enlazar dinámicamente los valores del modelo y mostrarlos en la página.
     - application.properties
