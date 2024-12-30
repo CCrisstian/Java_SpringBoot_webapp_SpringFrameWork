@@ -69,6 +69,7 @@
 - **src**.**main**
   - **java**
     - **com.ccristian.springboot.springmvc.app**
+      - **Application.java**
       - **controllers**
         - UserController.java
       - **entities**
