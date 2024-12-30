@@ -3,9 +3,9 @@
 
 <h3>Características principales:</h3>
 
-- Configuración automática (Auto-Configuration): Configura automáticamente los componentes de una aplicación en función de las dependencias presentes en el proyecto.
-- Servidor embebido: Incluye servidores como Tomcat, Jetty o Undertow, lo que elimina la necesidad de desplegar manualmente aplicaciones en un servidor externo.
-- Sistema de dependencias simplificado: Utiliza Spring Boot Starter Dependencies para incluir configuraciones predefinidas según las necesidades del proyecto.
-- Soporte para pruebas: Integra herramientas para realizar pruebas unitarias y de integración fácilmente.
-- Creación rápida: Genera proyectos iniciales con configuraciones básicas a través de Spring Initializr.
+- <b>Configuración automática (Auto-Configuration)</b>: Configura automáticamente los componentes de una aplicación en función de las dependencias presentes en el proyecto.
+- <b>Servidor embebido</b>: Incluye servidores como Tomcat, Jetty o Undertow, lo que elimina la necesidad de desplegar manualmente aplicaciones en un servidor externo.
+- <b>Sistema de dependencias simplificado</b>: Utiliza Spring Boot Starter Dependencies para incluir configuraciones predefinidas según las necesidades del proyecto.
+- <b>Soporte para pruebas</b>: Integra herramientas para realizar pruebas unitarias y de integración fácilmente.
+- <b>Creación rápida</b>: Genera proyectos iniciales con configuraciones básicas a través de Spring Initializr.
 
