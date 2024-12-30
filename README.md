@@ -63,3 +63,24 @@
   - Incluye todo lo necesario para trabajar con <b>Thymeleaf</b>, un motor de plantillas para generar vistas dinámicas en aplicaciones web.
 - `spring-boot-starter-validation`:
   - Proporciona soporte para la validación de datos mediante anotaciones estándar como `@Valid` o `@NotNull`, facilitando la validación en controladores y entidades.
+
+<h1 align="center">Estructura del Proyecto</h1>
+
+- **src**.**main**
+  - **java**
+    - **com.ccristian.springboot.springmvc.app**
+      - **controllers**
+        - UserController.java
+      - **entities**
+        - User.java
+     - **repositories**
+       - UserRepository.java
+     - **services**
+       - UserService.java
+       - UserServiceImpl.java
+  - **resources**
+    - **templates**
+      - form.html
+      - list.html
+      - view.html
+    - application.properties
