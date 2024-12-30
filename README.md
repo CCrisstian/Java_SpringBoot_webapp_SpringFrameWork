@@ -1,5 +1,5 @@
 <h1 align="center">Spring Boot</h1>
-<p><b>Spring Boot</b> es un framework basado en Spring que simplifica el desarrollo de aplicaciones Java, especialmente aplicaciones web y servicios RESTful. Su objetivo principal es reducir la complejidad de configuración manual, proporcionando una forma rápida y eficiente de crear aplicaciones robustas y escalables.</p>
+<p><b>Spring Boot</b> es un framework basado en Spring que simplifica el desarrollo de aplicaciones <b>Java</b>, especialmente aplicaciones web y servicios RESTful. Su objetivo principal es reducir la complejidad de configuración manual, proporcionando una forma rápida y eficiente de crear aplicaciones robustas y escalables.</p>
 
 <h3>Características principales:</h3>
 
