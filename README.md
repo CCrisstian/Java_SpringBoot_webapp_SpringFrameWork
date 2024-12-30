@@ -9,3 +9,10 @@
 - <b>Soporte para pruebas</b>: Integra herramientas para realizar pruebas unitarias y de integración fácilmente.
 - <b>Creación rápida</b>: Genera proyectos iniciales con configuraciones básicas a través de Spring Initializr.
 
+<h3>¿Para qué se usa?</h3>
+
+- <b>Aplicaciones web</b>: Desarrollo de aplicaciones con interfaces dinámicas y backend robusto.
+- <b>Servicios RESTful</b>: Creación de API para integrar sistemas o aplicaciones.
+- <b>Microservicios</b>: Es ideal para el desarrollo de arquitecturas de microservicios por su facilidad de configuración y despliegue independiente.
+- <b>Aplicaciones empresariales</b>: Desarrollo de sistemas complejos con acceso a bases de datos, mensajería, y más.
+
