@@ -69,7 +69,7 @@
 - **src**.**main**
   - **java**
     - **com.ccristian.springboot.springmvc.app**
-      - **Application.java**
+      - **Application.java**: Clase principal que inicia la aplicación Spring Boot. Contiene el método `main` que ejecuta `SpringApplication.run()`, arrancando el servidor y configurando el contexto de la aplicación.
       - **controllers**
         - UserController.java
       - **entities**
