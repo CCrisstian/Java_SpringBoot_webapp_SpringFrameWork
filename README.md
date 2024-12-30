@@ -44,3 +44,22 @@
 | **Servidor web**          | Externo (Tomcat, Jetty, etc.).                | Embebido por defecto.                           |
 | **Dependencias**          | Se deben seleccionar y configurar manualmente.| Incluye dependencias predefinidas (*Starters*). |
 | **Inicio rápido**         | Menos optimizado para proyectos pequeños.     | Ideal para proyectos rápidos o microservicios.  |
+
+<h1 align="center">pom.xml (dependencies)</h1>
+
+- `spring-boot-starter-data-jpa`:
+  - Proporciona soporte para trabajar con <b>JPA</b> (Java Persistence API). Incluye herramientas para implementar repositorios y gestionar la persistencia de datos con bases de datos relacionales.
+- `mysql-connector-j`:
+  - Driver <b>JDBC</b> para conectar la aplicación con una base de datos <b>MySQL</b>. Se utiliza para establecer la comunicación entre la aplicación y la base de datos.
+- `spring-boot-starter-web`:
+  - Incluye todo lo necesario para construir aplicaciones web. Proporciona soporte para controladores <b>REST</b>, servidores web embebidos (como Tomcat) y manejo de solicitudes <b>HTTP</b>.
+- `spring-boot-devtools`:
+  - Facilita el desarrollo con herramientas como recarga automática de la aplicación al realizar cambios en el código. Se ejecuta en tiempo de desarrollo y es opcional en entornos de producción.
+- `spring-boot-starter-test`:
+  - Proporciona dependencias necesarias para realizar pruebas en la aplicación, como JUnit, AssertJ, y Mockito. Está configurado específicamente para testear aplicaciones <b>Spring Boot</b>.
+- `spring-boot-starter-actuator`:
+  - Añade endpoints para monitorizar y gestionar la aplicación en tiempo de ejecución. Proporciona información sobre métricas, estado de salud y estadísticas.
+- `spring-boot-starter-thymeleaf`:
+  - Incluye todo lo necesario para trabajar con <b>Thymeleaf</b>, un motor de plantillas para generar vistas dinámicas en aplicaciones web.
+- `spring-boot-starter-validation`:
+  - Proporciona soporte para la validación de datos mediante anotaciones estándar como `@Valid` o `@NotNull`, facilitando la validación en controladores y entidades.
