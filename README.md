@@ -120,5 +120,75 @@ La clase `UserController` es un controlador Spring MVC que gestiona las operacio
     }
 ```
 
-Maneja las solicitudes GET a `/users/view` y `/users/another`, pasando un <b>título</b>, un <b>mensaje</b> de ejemplo y un objeto <b>User</b> a la vista `view`.
-La clase `Model` es parte del framework Spring MVC y se utiliza para transferir datos desde el controlador hacia las vistas. Es un contenedor que permite almacenar atributos clave-valor que estarán disponibles en la vista para ser procesados o renderizados.
+Maneja las solicitudes GET a `/users/view` y `/users/another`, pasando un <b>título</b>, un <b>mensaje</b> de ejemplo y un objeto <b>User</b> a la vista `view`. La clase `Model` es parte del framework Spring MVC y se utiliza para transferir datos desde el controlador hacia las vistas. Es un contenedor que permite almacenar atributos clave-valor que estarán disponibles en la vista para ser procesados o renderizados.
+
+```java
+    @GetMapping({"", "/"})
+    public String list(Model model) {
+        model.addAttribute("title", "Listado de Usuarios");
+        model.addAttribute("users", service.findAll());
+        return "list";
+    }
+```
+
+Maneja las solicitudes GET a las rutas `/users` y `/users/`. Pasa un <b>título</b> y la <b>lista de usuarios</b> obtenida del servicio al modelo, y redirige a la vista `list` para mostrar el listado de usuarios.
+
+```java
+    @GetMapping("/form/{id}")
+    public String form(@PathVariable Long id, Model model, RedirectAttributes redirect) {
+        
+        Optional<User> optionalUser = service.finById(id);
+        
+        if (optionalUser.isPresent()) {
+            model.addAttribute("title", "EDITAR Usuario");
+            model.addAttribute("user", optionalUser.get());
+            return "form";
+        } else {
+            redirect.addFlashAttribute("error", "El usuario con el id: " + id + " NO EXISTE en la Base de Datos");
+            return "redirect:/users";
+        }
+    }
+```
+
+Este método está diseñado para manejar la visualización del formulario de edición de un usuario existente, o redirigir al listado de usuarios si el usuario con el ID proporcionado no existe.
+
+```java
+    @PostMapping
+    public String form(@Valid User user, BindingResult result, Model model, RedirectAttributes redirect, SessionStatus status) {
+
+        if (result.hasErrors()) {
+            model.addAttribute("title", "Validando Formulario");
+            return "form";
+        }
+
+        String message = user.getId() != null && user.getId() > 0 ?
+                "El usuario: " + user.getName() + " se ha ACTUALIZADO con éxito!"
+                : "El usuario: " + user.getName() + " se ha CREADO con éxito!";
+
+        service.save(user);
+
+        status.setComplete();
+        redirect.addFlashAttribute("success", message);
+        return "redirect:/users";
+    }
+```
+
+Anotación `@PostMapping`: Indica que este método se ejecuta cuando el navegador realiza una solicitud HTTP POST hacia la URL que maneja el controlador (en este caso, `/users`). Esto generalmente sucede cuando un formulario se envía.
+
+```java
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable Long id, RedirectAttributes redirect) {
+        
+        Optional<User> optionalUser = service.finById(id);
+        
+        if (optionalUser.isPresent()) {
+            service.remove(id);
+            redirect.addFlashAttribute("success", "El usuario: " + optionalUser.get().getName() + " se ha ELIMINADO con éxito!");
+            return "redirect:/users";
+        }
+        redirect.addFlashAttribute("error", "El usuario con el id: " + optionalUser.get().getId() + " no existe en el sistema");
+        return "redirect:/users";
+    }
+```
+
+Este método maneja las peticiones GET que se hacen a la ruta `/users/delete/{id}`, donde `{id}` es el identificador del usuario que se desea eliminar.
