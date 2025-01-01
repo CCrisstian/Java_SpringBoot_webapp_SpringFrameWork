@@ -93,7 +93,7 @@ La clase `UserController` es un controlador Spring MVC que gestiona las operacio
 <h3>Anotaciones en la clase UserController</h3>
 
 - @Controller
- - Significado:
-  - Esta anotación marca la clase como un controlador Spring MVC. Indica que la clase maneja solicitudes web y devuelve vistas o datos como respuesta.
- - Funcionamiento:
-  - Spring detecta esta clase durante el escaneo del contexto y la registra como un componente que gestiona las solicitudes HTTP.
+  - Significado:
+    - Esta anotación marca la clase como un controlador Spring MVC. Indica que la clase maneja solicitudes web y devuelve vistas o datos como respuesta.
+  - Funcionamiento:
+    - Spring detecta esta clase durante el escaneo del contexto y la registra como un componente que gestiona las solicitudes HTTP.
