@@ -47,7 +47,9 @@ public class UserController {
 
     @GetMapping("/form/{id}")
     public String form(@PathVariable Long id, Model model, RedirectAttributes redirect) {
+
         Optional<User> optionalUser = service.finById(id);
+
         if (optionalUser.isPresent()) {
             model.addAttribute("title", "EDITAR Usuario");
             model.addAttribute("user", optionalUser.get());
@@ -79,7 +81,9 @@ public class UserController {
 
     @GetMapping("/delete/{id}")
     public String delete(@PathVariable Long id, RedirectAttributes redirect) {
+
         Optional<User> optionalUser = service.finById(id);
+
         if (optionalUser.isPresent()) {
             service.remove(id);
             redirect.addFlashAttribute("success", "El usuario: " + optionalUser.get().getName() + " se ha ELIMINADO con éxito!");
