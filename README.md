@@ -86,3 +86,14 @@
       - view.html: Vista que muestra los detalles de un usuario. Utiliza Thymeleaf para enlazar dinámicamente los valores del modelo y mostrarlos en la página.
     - application.properties: Archivo de configuración de Spring Boot, que establece configuraciones para Thymeleaf para las vistas HTML, la base de datos y habilita la visualización de las consultas SQL ejecutadas por Hibernate.
 
+<h1 align="center">Controlador (UserController)</h1>
+
+La clase `UserController` es un controlador Spring MVC que gestiona las operaciones relacionadas con la entidad `User`. Su función principal es proporcionar puntos de acceso para listar, crear, editar y eliminar usuarios. Este controlador también administra las vistas correspondientes para cada operación y utiliza `SessionAttributes` para mantener datos temporales de usuario durante la sesión.
+
+<h3>Anotaciones en la clase UserController</h3>
+
+- @Controller
+ - Significado:
+  - Esta anotación marca la clase como un controlador Spring MVC. Indica que la clase maneja solicitudes web y devuelve vistas o datos como respuesta.
+ - Funcionamiento:
+  - Spring detecta esta clase durante el escaneo del contexto y la registra como un componente que gestiona las solicitudes HTTP.
