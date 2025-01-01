@@ -92,8 +92,33 @@ La clase `UserController` es un controlador Spring MVC que gestiona las operacio
 
 <h3>Anotaciones en la clase UserController</h3>
 
-- @Controller
+- `@Controller`
   - Significado:
     - Esta anotación marca la clase como un controlador Spring MVC. Indica que la clase maneja solicitudes web y devuelve vistas o datos como respuesta.
   - Funcionamiento:
     - Spring detecta esta clase durante el escaneo del contexto y la registra como un componente que gestiona las solicitudes HTTP.
+
+- `@RequestMapping("/users")`
+  - Significado:
+    - Especifica la URL base o prefijo para las rutas que manejará esta clase. En este caso, todas las rutas definidas en la clase tendrán como prefijo `/users`.
+
+- `@SessionAttributes({"user"})`
+  - Significado:
+    - Indica que el atributo especificado (en este caso, `"user"`) se almacenará en la sesión HTTP mientras dure la interacción del usuario con el controlador.
+  - Funcionamiento:
+    - Los datos almacenados en la sesión están disponibles entre solicitudes HTTP en un contexto temporal, lo cual es útil para mantener información mientras el usuario interactúa con formularios. Cuando se llama a `SessionStatus.setComplete()`, el atributo almacenado en la sesión es eliminado.
+
+<h3>Métodos de la clase UserController</h3>
+
+```java
+    @GetMapping({"/view", "/another"})
+    public String view(Model model) {
+        model.addAttribute("title", "Hola mundo Spring Boot");
+        model.addAttribute("message", "Esta es una aplicación de ejemplo usando Spring Boot!!!");
+        model.addAttribute("user", new User("Cristian", "Cirstaldo"));
+        return "view";
+    }
+```
+
+Maneja las solicitudes GET a `/users/view` y `/users/another`, pasando un <b>título</b>, un <b>mensaje</b> de ejemplo y un objeto <b>User</b> a la vista `view`.
+La clase `Model` es parte del framework Spring MVC y se utiliza para transferir datos desde el controlador hacia las vistas. Es un contenedor que permite almacenar atributos clave-valor que estarán disponibles en la vista para ser procesados o renderizados.
