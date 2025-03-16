@@ -1,16 +1,19 @@
 <h1 align="center">Spring Boot</h1>
 <p><b>Spring Boot</b> es un framework basado en Spring que simplifica el desarrollo de aplicaciones <b>Java</b>, especialmente aplicaciones web y servicios RESTful. Su objetivo principal es reducir la complejidad de configuración manual, proporcionando una forma rápida y eficiente de crear aplicaciones robustas y escalables.</p>
 
-<p>En programación, un framework es un conjunto de herramientas, bibliotecas y buenas prácticas diseñadas para facilitar el desarrollo de software. Proporciona una estructura predefinida sobre la cual los desarrolladores pueden construir sus aplicaciones sin tener que escribir todo desde cero.</p>
+<p>En programación, un <b>'framework'</b> es un conjunto de herramientas, bibliotecas y buenas prácticas diseñadas para facilitar el desarrollo de software. Proporciona una estructura predefinida sobre la cual los desarrolladores pueden construir sus aplicaciones sin tener que escribir todo desde cero.</p>
 
-<h3>Características principales de un framework</h3>:
+<h3>Características principales de un <b>'framework'</b>:</h3>
+
 - <b>Estructura predefinida</b>: Proporciona una arquitectura base para el desarrollo de aplicaciones.
 - <b>Código reutilizable</b>: Incluye funciones y bibliotecas listas para usar.
 - <b>Convención sobre configuración</b>: En muchos casos, sigue principios como "convención sobre configuración", lo que reduce la cantidad de configuraciones manuales necesarias.
 - <b>Modularidad</b>: Permite extender o modificar su funcionalidad con módulos o plugins.
 - <b>Automatización de tareas comunes</b>: Manejo de bases de datos, seguridad, autenticación, enrutamiento, etc.
 
-<h3>Características principales de Spring Boot:</h3>
+<p>Un <b>'framework'</b> no es lo mismo que una biblioteca, ya que impone una forma específica de organizar y estructurar el código, mientras que una biblioteca solo proporciona funcionalidades específicas sin imponer una estructura.</p>
+
+<h3>Características principales de <b>'Spring Boot'</b>:</h3>
 
 - <b>Configuración automática (Auto-Configuration)</b>: Configura automáticamente los componentes de una aplicación en función de las dependencias presentes en el proyecto.
 - <b>Servidor embebido</b>: Incluye servidores como Tomcat, Jetty o Undertow, lo que elimina la necesidad de desplegar manualmente aplicaciones en un servidor externo.
