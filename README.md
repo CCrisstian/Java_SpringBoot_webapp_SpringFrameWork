@@ -47,7 +47,7 @@
 - <b>Gestión de transacciones y datos</b>: Manejo de bases de datos y operaciones transaccionales de manera segura.
 - <b>Seguridad</b>: Implementación de autenticación y autorización en aplicaciones con Spring Security.
 
-<h3>Diferencias clave entre Spring Boot y Spring Framework</h3>
+<h3>Diferencias clave entre <b>'Spring Boot'</b> y <b>'Spring Framework'</b></h3>
 
 | **Aspecto**               | **Spring Framework**                           | **Spring Boot**                                    |
 |---------------------------|-----------------------------------------------|--------------------------------------------------|
