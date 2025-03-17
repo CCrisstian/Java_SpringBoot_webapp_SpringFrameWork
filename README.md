@@ -76,6 +76,40 @@
 - `spring-boot-starter-validation`:
   - Proporciona soporte para la validación de datos mediante anotaciones estándar como `@Valid` o `@NotNull`, facilitando la validación en controladores y entidades.
 
+<h1 align="center">'application.properties' y 'Application'</h1>
+<h2>application.properties</h2>
+<p>Este archivo contiene la configuración de la aplicación <b>Spring Boot</b>, permitiendo personalizar su comportamiento sin modificar el código fuente</p>
+
+```properties
+spring.application.name=1-springboot-mvc
+spring.thymeleaf.prefix=classpath:/templates/
+spring.thymeleaf.suffix=.html
+spring.thymeleaf.mode=HTML
+spring.datasource.url=jdbc:mysql://localhost:3306/db_springboot 
+spring.datasource.username=root
+spring.datasource.password=sasa
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.jpa.show-sql=true
+spring.jpa.hibernate.ddl-auto=update
+```
+
+<h3>Funciones principales:</h3>
+
+- Configuración del nombre de la aplicación:
+  - `spring.application.name=1-springboot-mvc`: Define el nombre de la aplicación dentro del contexto de Spring.
+- Configuración de <b>Thymeleaf</b> (motor de plantillas):
+  - `spring.thymeleaf.prefix=classpath:/templates/` → Indica la ubicación de las plantillas HTML.
+  - `spring.thymeleaf.suffix=.html` → Define la extensión de los archivos de vista.
+  - `spring.thymeleaf.mode=HTML` → Especifica el modo de procesamiento de las plantillas.
+- Configuración de la base de datos <b>MySQL</b>:
+  - `spring.datasource.url=jdbc:mysql://localhost:3306/db_springboot` → Define la URL de conexión.
+  - `spring.datasource.username=root` → Usuario de la base de datos.
+  - `spring.datasource.password=sasa` → Contraseña de la base de datos.
+  - `spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver` → Define el driver de <b>MySQL</b> que usará <b>Spring Boot</b>.
+- Configuración de <b>JPA</b> e <b>Hibernate</b>:
+  - `spring.jpa.show-sql=true` → Muestra las consultas <b>SQL</b> ejecutadas en la consola.
+  - `spring.jpa.hibernate.ddl-auto=update` → Permite que <b>Hibernate</b> actualice automáticamente la estructura de la base de datos.
+
 <h1 align="center">Estructura del Proyecto</h1>
 
 - **src**.**main**
