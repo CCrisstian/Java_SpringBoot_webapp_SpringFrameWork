@@ -110,6 +110,34 @@ spring.jpa.hibernate.ddl-auto=update
   - `spring.jpa.show-sql=true` → Muestra las consultas <b>SQL</b> ejecutadas en la consola.
   - `spring.jpa.hibernate.ddl-auto=update` → Permite que <b>Hibernate</b> actualice automáticamente la estructura de la base de datos.
 
+<h2>Application.java</h2>
+<p>Esta es la clase principal de la aplicación <b>Spring Boot</b>. Su función es iniciar la aplicación y configurar automáticamente todos los componentes de <b>Spring</b>.</p>
+
+```java
+package com.ccristian.springboot.springmvc.app;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class Application {
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
+}
+```
+
+<h3>Funciones principales</h3>:
+
+- `@SpringBootApplication`
+  - Indica que esta es la clase de inicio de <b>Spring Boot</b>.
+  - Habilita la configuración automática (`@EnableAutoConfiguration`).
+  - Escanea los componentes (`@ComponentScan`).
+  - Configura la persistencia (`@EnableJpaRepositories`).
+- Método `main`
+  - Llama a `SpringApplication.run(Application.class, args);`
+  - Esto inicia el contexto de <b>Spring</b> y arranca el servidor web embebido (<b>Tomcat</b> por defecto).
+
 <h1 align="center">Estructura del Proyecto</h1>
 
 - **src**.**main**
