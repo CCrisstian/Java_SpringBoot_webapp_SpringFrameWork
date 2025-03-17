@@ -152,7 +152,7 @@ La clase `UserController` es un controlador Spring MVC que gestiona las operacio
   - Funcionamiento:
     - Los datos almacenados en la sesión están disponibles entre solicitudes HTTP en un contexto temporal, lo cual es útil para mantener información mientras el usuario interactúa con formularios. Cuando se llama a `SessionStatus.setComplete()`, el atributo almacenado en la sesión es eliminado.
 
-<h3><ins>Métodos de la clase **UserController**</ins></h3>
+<h3><ins>Métodos de la clase 'UserController'</ins></h3>
 
 <h3>Clase 'Model'</h3>
 <p>La clase `Model` en Spring MVC tiene la función principal de <b>almacenar atributos que se pasan a la vista</b> (generalmente un archivo de plantilla como un archivo HTML con <b>Thymeleaf</b>). Esta clase proporciona una forma de agregar datos a la vista y es utilizada con frecuencia en los <b>controladores</b> para enviar información al frontend.</p>
