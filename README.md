@@ -148,7 +148,7 @@ public class Application {
   - ***resources***
     - ***templates***
       - `form.html`: Vista que muestra un formulario para crear o editar un usuario. Utiliza Thymeleaf para el enlazado dinámico de datos con el objeto `user`.
-      - list.html: Vista que muestra una lista de usuarios en una tabla. Utiliza Thymeleaf para mostrar dinámicamente la información de los usuarios. Además, ofrece opciones para editar o eliminar cada usuario. También incluye alertas para mostrar mensajes de éxito o error.
+      - `list.html`: Vista que muestra una lista de usuarios en una tabla. Utiliza Thymeleaf para mostrar dinámicamente la información de los usuarios. Además, ofrece opciones para editar o eliminar cada usuario. También incluye alertas para mostrar mensajes de éxito o error.
       - `view.html`: Vista que muestra los detalles de un usuario. Utiliza **Thymeleaf** para enlazar dinámicamente los valores del modelo y mostrarlos en la página.
     - `application.properties`: Archivo de configuración de **Spring Boot**, que establece configuraciones para **Thymeleaf** para las vistas **HTML**, la **base de datos** y habilita la visualización de las **consultas SQL** ejecutadas por Hibernate.
 
