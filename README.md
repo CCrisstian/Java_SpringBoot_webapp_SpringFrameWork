@@ -237,6 +237,9 @@ Anotación `@PostMapping`: Indica que este método se ejecuta cuando el navegado
 
 Este método maneja las peticiones GET que se hacen a la ruta `/users/delete/{id}`, donde `{id}` es el identificador del usuario que se desea eliminar.
 
+<h3>Clase 'Model'</h3>
+<p>La clase `Model` en Spring MVC tiene la función principal de <b>almacenar atributos que se pasan a la vista</b> (generalmente un archivo de plantilla como un archivo HTML con <b>Thymeleaf</b>). Esta clase proporciona una forma de agregar datos a la vista y es utilizada con frecuencia en los <b>controladores</b> para enviar información al frontend.</p>
+
 <h1 align="center">Estructura del Proyecto</h1>
 
 - ***src.main***
