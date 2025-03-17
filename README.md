@@ -127,7 +127,7 @@ public class Application {
 }
 ```
 
-<h3>Funciones principales</h3>:
+<h3>Funciones principales:</h3>
 
 - `@SpringBootApplication`
   - Indica que esta es la clase de inicio de <b>Spring Boot</b>.
