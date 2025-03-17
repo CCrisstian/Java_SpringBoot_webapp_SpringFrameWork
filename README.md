@@ -130,28 +130,6 @@ public class Application {
   - Llama a `SpringApplication.run(Application.class, args);`
   - Esto inicia el contexto de **Spring** y arranca el servidor web embebido (**Tomcat** por defecto).
 
-<h1 align="center">Estructura del Proyecto</h1>
-
-- ***src.main***
-  - ***java***
-    - ***com.ccristian.springboot.springmvc.app***
-      - `Application.java`: Clase principal que inicia la aplicación **Spring Boot**. Contiene el método `main` que ejecuta `SpringApplication.run()`, arrancando el servidor y configurando el contexto de la aplicación.
-      - ***controllers***
-        - `UserController.java`: Controlador que maneja las solicitudes **HTTP** relacionadas con los usuarios. Contiene métodos para **listar**, **crear**, **editar**, **eliminar** y **visualizar** usuarios. Utiliza `UserService` para interactuar con la **base de datos** y las vistas **Thymeleaf** para mostrar los datos al usuario. Implementa ***validaciones en los formularios*** de **creación** y **edición** de usuarios.
-      - ***entities***
-        - `User.java`: Contiene atributos y está mapeada a la tabla `users` en la **base de datos**. Incluye **validaciones** sobre los campos y además, define un método `prePersist()` que ***establece la fecha de creación antes de insertar un nuevo usuario en la base de datos***.
-     - ***repositories***
-       - `UserRepository.java`: Interfaz que extiende `CrudRepository` de **Spring Data JPA**, ***proporcionando métodos CRUD básicos para interactuar con la base de datos*** y realizar operaciones sobre la entidad `User`. No es necesario implementar los métodos, ya que **Spring Data JPA** los genera automáticamente. Para mayor informacion sobre metodos personalizados al heredar de `CrudRepository` ir a [Defining Query Methods](https://docs.spring.io/spring-data/jpa/reference/repositories/query-methods-details.html#repositories.query-methods.query-creation), [Query Creation](https://docs.spring.io/spring-data/jpa/reference/jpa/query-methods.html#jpa.query-methods.query-creation) o usando lenguaje de consulta SQL [Using @Query](https://docs.spring.io/spring-data/jpa/reference/jpa/query-methods.html#jpa.query-methods.at-query)
-     - ***services***
-       - `UserService.java`: Interfaz que define los métodos para la lógica de negocio relacionada con los usuarios.
-       - `UserServiceImpl.java`: Implementación de la interfaz `UserService`, encargada de la ***lógica de negocio relacionada con los usuarios**. Actúa como un intermediario entre el controlador y la capa de persistencia, utilizando `UserRepository` para ***interactuar con la base de datos***. Los métodos están anotados con `@Transactional` para garantizar la ***gestión adecuada de las transacciones***. Al centralizar la lógica en esta capa de servicio, se mejora la organización del código, facilitando su mantenimiento y reutilización.
-  - ***resources***
-    - ***templates***
-      - `form.html`: Vista que muestra un formulario para crear o editar un usuario. Utiliza Thymeleaf para el enlazado dinámico de datos con el objeto `user`.
-      - `list.html`: Vista que muestra una lista de usuarios en una tabla. Utiliza Thymeleaf para mostrar dinámicamente la información de los usuarios. Además, ofrece opciones para editar o eliminar cada usuario. También incluye alertas para mostrar mensajes de éxito o error.
-      - `view.html`: Vista que muestra los detalles de un usuario. Utiliza **Thymeleaf** para enlazar dinámicamente los valores del modelo y mostrarlos en la página.
-    - `application.properties`: Archivo de configuración de **Spring Boot**, que establece configuraciones para **Thymeleaf** para las vistas **HTML**, la **base de datos** y habilita la visualización de las **consultas SQL** ejecutadas por Hibernate.
-
 <h1 align="center">Controlador (UserController)</h1>
 
 La clase `UserController` es un controlador Spring MVC que gestiona las operaciones relacionadas con la entidad `User`. Su función principal es proporcionar puntos de acceso para listar, crear, editar y eliminar usuarios. Este controlador también administra las vistas correspondientes para cada operación y utiliza `SessionAttributes` para mantener datos temporales de usuario durante la sesión.
@@ -258,3 +236,25 @@ Anotación `@PostMapping`: Indica que este método se ejecuta cuando el navegado
 ```
 
 Este método maneja las peticiones GET que se hacen a la ruta `/users/delete/{id}`, donde `{id}` es el identificador del usuario que se desea eliminar.
+
+<h1 align="center">Estructura del Proyecto</h1>
+
+- ***src.main***
+  - ***java***
+    - ***com.ccristian.springboot.springmvc.app***
+      - `Application.java`: Clase principal que inicia la aplicación **Spring Boot**. Contiene el método `main` que ejecuta `SpringApplication.run()`, arrancando el servidor y configurando el contexto de la aplicación.
+      - ***controllers***
+        - `UserController.java`: Controlador que maneja las solicitudes **HTTP** relacionadas con los usuarios. Contiene métodos para **listar**, **crear**, **editar**, **eliminar** y **visualizar** usuarios. Utiliza `UserService` para interactuar con la **base de datos** y las vistas **Thymeleaf** para mostrar los datos al usuario. Implementa ***validaciones en los formularios*** de **creación** y **edición** de usuarios.
+      - ***entities***
+        - `User.java`: Contiene atributos y está mapeada a la tabla `users` en la **base de datos**. Incluye **validaciones** sobre los campos y además, define un método `prePersist()` que ***establece la fecha de creación antes de insertar un nuevo usuario en la base de datos***.
+     - ***repositories***
+       - `UserRepository.java`: Interfaz que extiende `CrudRepository` de **Spring Data JPA**, ***proporcionando métodos CRUD básicos para interactuar con la base de datos*** y realizar operaciones sobre la entidad `User`. No es necesario implementar los métodos, ya que **Spring Data JPA** los genera automáticamente. Para mayor informacion sobre metodos personalizados al heredar de `CrudRepository` ir a [Defining Query Methods](https://docs.spring.io/spring-data/jpa/reference/repositories/query-methods-details.html#repositories.query-methods.query-creation), [Query Creation](https://docs.spring.io/spring-data/jpa/reference/jpa/query-methods.html#jpa.query-methods.query-creation) o usando lenguaje de consulta SQL [Using @Query](https://docs.spring.io/spring-data/jpa/reference/jpa/query-methods.html#jpa.query-methods.at-query)
+     - ***services***
+       - `UserService.java`: Interfaz que define los métodos para la lógica de negocio relacionada con los usuarios.
+       - `UserServiceImpl.java`: Implementación de la interfaz `UserService`, encargada de la ***lógica de negocio relacionada con los usuarios**. Actúa como un intermediario entre el controlador y la capa de persistencia, utilizando `UserRepository` para ***interactuar con la base de datos***. Los métodos están anotados con `@Transactional` para garantizar la ***gestión adecuada de las transacciones***. Al centralizar la lógica en esta capa de servicio, se mejora la organización del código, facilitando su mantenimiento y reutilización.
+  - ***resources***
+    - ***templates***
+      - `form.html`: Vista que muestra un formulario para crear o editar un usuario. Utiliza Thymeleaf para el enlazado dinámico de datos con el objeto `user`.
+      - `list.html`: Vista que muestra una lista de usuarios en una tabla. Utiliza Thymeleaf para mostrar dinámicamente la información de los usuarios. Además, ofrece opciones para editar o eliminar cada usuario. También incluye alertas para mostrar mensajes de éxito o error.
+      - `view.html`: Vista que muestra los detalles de un usuario. Utiliza **Thymeleaf** para enlazar dinámicamente los valores del modelo y mostrarlos en la página.
+    - `application.properties`: Archivo de configuración de **Spring Boot**, que establece configuraciones para **Thymeleaf** para las vistas **HTML**, la **base de datos** y habilita la visualización de las **consultas SQL** ejecutadas por Hibernate.
