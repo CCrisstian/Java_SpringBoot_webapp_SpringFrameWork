@@ -59,22 +59,14 @@
 
 <h1 align="center">pom.xml (dependencies)</h1>
 
-- `spring-boot-starter-data-jpa`:
-  - Proporciona soporte para trabajar con <b>JPA</b> (Java Persistence API). Incluye herramientas para implementar repositorios y gestionar la persistencia de datos con bases de datos relacionales.
-- `mysql-connector-j`:
-  - Driver <b>JDBC</b> para conectar la aplicación con una base de datos <b>MySQL</b>. Se utiliza para establecer la comunicación entre la aplicación y la base de datos.
-- `spring-boot-starter-web`:
-  - Incluye todo lo necesario para construir aplicaciones web. Proporciona soporte para controladores <b>REST</b>, servidores web embebidos (como Tomcat) y manejo de solicitudes <b>HTTP</b>.
-- `spring-boot-devtools`:
-  - Facilita el desarrollo con herramientas como recarga automática de la aplicación al realizar cambios en el código. Se ejecuta en tiempo de desarrollo y es opcional en entornos de producción.
-- `spring-boot-starter-test`:
-  - Proporciona dependencias necesarias para realizar pruebas en la aplicación, como JUnit, AssertJ, y Mockito. Está configurado específicamente para testear aplicaciones <b>Spring Boot</b>.
-- `spring-boot-starter-actuator`:
-  - Añade endpoints para monitorizar y gestionar la aplicación en tiempo de ejecución. Proporciona información sobre métricas, estado de salud y estadísticas.
-- `spring-boot-starter-thymeleaf`:
-  - Incluye todo lo necesario para trabajar con <b>Thymeleaf</b>, un motor de plantillas para generar vistas dinámicas en aplicaciones web.
-- `spring-boot-starter-validation`:
-  - Proporciona soporte para la validación de datos mediante anotaciones estándar como `@Valid` o `@NotNull`, facilitando la validación en controladores y entidades.
+- `spring-boot-starter-data-jpa`: Proporciona soporte para trabajar con **JPA** (Java Persistence API). Incluye herramientas para implementar repositorios y gestionar la persistencia de datos con ***bases de datos relacionales***.
+- `mysql-connector-j`: Driver **JDBC** para conectar la aplicación con una base de datos **MySQL**. Se utiliza para establecer la comunicación entre la aplicación y la base de datos.
+- `spring-boot-starter-web`: Incluye todo lo necesario para construir aplicaciones web. Proporciona soporte para controladores **REST**, servidores web embebidos (como **Tomcat**) y manejo de solicitudes **HTTP**.
+- `spring-boot-devtools`: Facilita el desarrollo con herramientas como recarga automática de la aplicación al realizar cambios en el código. Se ejecuta en tiempo de desarrollo y es opcional en entornos de producción.
+- `spring-boot-starter-test`: Proporciona dependencias necesarias para realizar pruebas en la aplicación, como **JUnit**, **AssertJ**, y **Mockito**. Está configurado específicamente para testear aplicaciones **Spring Boot**.
+- `spring-boot-starter-actuator`: Añade **endpoints** para monitorizar y gestionar la aplicación en tiempo de ejecución. Proporciona información sobre métricas, estado de salud y estadísticas.
+- `spring-boot-starter-thymeleaf`: Incluye todo lo necesario para trabajar con **Thymeleaf**, un motor de plantillas para generar vistas dinámicas en aplicaciones web.
+- `spring-boot-starter-validation`: Proporciona soporte para la validación de datos mediante anotaciones estándar como `@Valid` o `@NotNull`, facilitando la validación en controladores y entidades.
 
 <h1 align="center">'application.properties' y 'Application'</h1>
 <h2>application.properties</h2>
@@ -96,19 +88,19 @@ spring.jpa.hibernate.ddl-auto=update
 <h3>Funciones principales:</h3>
 
 - Configuración del nombre de la aplicación:
-  - `spring.application.name=1-springboot-mvc`: Define el nombre de la aplicación dentro del contexto de Spring.
-- Configuración de <b>Thymeleaf</b> (motor de plantillas):
+  - `spring.application.name=1-springboot-mvc`: Define el nombre de la aplicación dentro del contexto de **Spring**.
+- Configuración de **Thymeleaf** (motor de plantillas):
   - `spring.thymeleaf.prefix=classpath:/templates/` → Indica la ubicación de las plantillas HTML.
   - `spring.thymeleaf.suffix=.html` → Define la extensión de los archivos de vista.
   - `spring.thymeleaf.mode=HTML` → Especifica el modo de procesamiento de las plantillas.
-- Configuración de la base de datos <b>MySQL</b>:
+- Configuración de la base de datos **MySQL**:
   - `spring.datasource.url=jdbc:mysql://localhost:3306/db_springboot` → Define la URL de conexión.
   - `spring.datasource.username=root` → Usuario de la base de datos.
   - `spring.datasource.password=sasa` → Contraseña de la base de datos.
-  - `spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver` → Define el driver de <b>MySQL</b> que usará <b>Spring Boot</b>.
-- Configuración de <b>JPA</b> e <b>Hibernate</b>:
-  - `spring.jpa.show-sql=true` → Muestra las consultas <b>SQL</b> ejecutadas en la consola.
-  - `spring.jpa.hibernate.ddl-auto=update` → Permite que <b>Hibernate</b> actualice automáticamente la estructura de la base de datos.
+  - `spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver` → Define el driver de **MySQL** que usará **Spring Boot**.
+- Configuración de **JPA** e **Hibernate**:
+  - `spring.jpa.show-sql=true` → Muestra las consultas **SQL** ejecutadas en la consola.
+  - `spring.jpa.hibernate.ddl-auto=update` → Permite que **Hibernate** actualice automáticamente la estructura de la base de datos.
 
 <h2>Application.java</h2>
 <p>Esta es la clase principal de la aplicación <b>Spring Boot</b>. Su función es iniciar la aplicación y configurar automáticamente todos los componentes de <b>Spring</b>.</p>
@@ -130,13 +122,13 @@ public class Application {
 <h3>Funciones principales:</h3>
 
 - `@SpringBootApplication`
-  - Indica que esta es la clase de inicio de <b>Spring Boot</b>.
+  - Indica que esta es la clase de inicio de **Spring Boot**.
   - Habilita la configuración automática (`@EnableAutoConfiguration`).
   - Escanea los componentes (`@ComponentScan`).
   - Configura la persistencia (`@EnableJpaRepositories`).
 - Método `main`
   - Llama a `SpringApplication.run(Application.class, args);`
-  - Esto inicia el contexto de <b>Spring</b> y arranca el servidor web embebido (<b>Tomcat</b> por defecto).
+  - Esto inicia el contexto de **Spring** y arranca el servidor web embebido (**Tomcat** por defecto).
 
 <h1 align="center">Estructura del Proyecto</h1>
 
