@@ -13,7 +13,7 @@
 
 <p>Un <b>'framework'</b> no es lo mismo que una biblioteca, ya que impone una forma específica de organizar y estructurar el código, mientras que una biblioteca solo proporciona funcionalidades específicas sin imponer una estructura.</p>
 
-<h3>Características principales de <b>'Spring Boot'</b>:</h3>
+<h3><ins>Características principales de <b>'Spring Boot'</b></ins>:</h3>
 
 - <b>Configuración automática (Auto-Configuration)</b>: Configura automáticamente los componentes de una aplicación en función de las dependencias presentes en el proyecto.
 - <b>Servidor embebido</b>: Incluye servidores como Tomcat, Jetty o Undertow, lo que elimina la necesidad de desplegar manualmente aplicaciones en un servidor externo.
@@ -21,17 +21,17 @@
 - <b>Soporte para pruebas</b>: Integra herramientas para realizar pruebas unitarias y de integración fácilmente.
 - <b>Creación rápida</b>: Genera proyectos iniciales con configuraciones básicas a través de Spring Initializr.
 
-<h3>¿Para qué se usa?</h3>
+<h3><ins>¿Para qué se usa?</ins></h3>
 
 - <b>Aplicaciones web</b>: Desarrollo de aplicaciones con interfaces dinámicas y backend robusto.
 - <b>Servicios RESTful</b>: Creación de API para integrar sistemas o aplicaciones.
 - <b>Microservicios</b>: Es ideal para el desarrollo de arquitecturas de microservicios por su facilidad de configuración y despliegue independiente.
 - <b>Aplicaciones empresariales</b>: Desarrollo de sistemas complejos con acceso a bases de datos, mensajería, y más.
 
-<h1 align="center">Spring Framework</h1>
+<h1 align="center"><ins>Spring Framework</ins></h1>
 <p><b>Spring Framework</b> es un framework de código abierto para el desarrollo de aplicaciones Java empresariales. Es modular y versátil, diseñado para simplificar la creación de aplicaciones robustas, escalables y fáciles de mantener, ofreciendo herramientas para resolver problemas comunes en el desarrollo empresarial.</p>
 
-<h3>Características principales:</h3>
+<h3><ins>Características principales</ins>:</h3>
 
 - <b>Inyección de dependencias (DI)</b>: Implementa el patrón de inversión de control (IoC) para gestionar objetos y sus dependencias, lo que promueve un código modular y fácilmente testeable.
 - <b>Programación orientada a aspectos (AOP)</b>: Permite manejar funcionalidades transversales, como la seguridad, el registro de actividades y la gestión de transacciones, sin afectar el código principal.
@@ -39,7 +39,7 @@
 - <b>Flexibilidad y modularidad</b>: Es modular, por lo que se puede usar solo los componentes que se necesitan (por ejemplo, Spring MVC, Spring Data, Spring Security, etc.).
 - <b>Compatibilidad con múltiples entornos</b>: Funciona tanto para aplicaciones locales como distribuidas, en la nube o microservicios.
 
-<h3>¿Para qué se usa?</h3>
+<h3><ins>¿Para qué se usa?</ins></h3>
 
 - <b>Desarrollo de aplicaciones empresariales</b>: Proyectos complejos que requieren escalabilidad y robustez.
 - <b>Creación de APIs y servicios web</b>: Desarrollo de aplicaciones RESTful y SOAP.
@@ -47,7 +47,7 @@
 - <b>Gestión de transacciones y datos</b>: Manejo de bases de datos y operaciones transaccionales de manera segura.
 - <b>Seguridad</b>: Implementación de autenticación y autorización en aplicaciones con Spring Security.
 
-<h3>Diferencias clave entre <b>'Spring Boot'</b> y <b>'Spring Framework'</b></h3>
+<h3><ins>Diferencias clave entre <b>'Spring Boot'</b> y <b>'Spring Framework'</b></ins></h3>
 
 | **Aspecto**               | **Spring Framework**                           | **Spring Boot**                                    |
 |---------------------------|-----------------------------------------------|--------------------------------------------------|
@@ -57,7 +57,7 @@
 | **Dependencias**          | Se deben seleccionar y configurar manualmente.| Incluye dependencias predefinidas (*Starters*). |
 | **Inicio rápido**         | Menos optimizado para proyectos pequeños.     | Ideal para proyectos rápidos o microservicios.  |
 
-<h1 align="center">pom.xml (dependencies)</h1>
+<h1 align="center"><ins>pom.xml (dependencies)</ins></h1>
 
 - `spring-boot-starter-data-jpa`: Proporciona soporte para trabajar con **JPA** (Java Persistence API). Incluye herramientas para implementar repositorios y gestionar la persistencia de datos con ***bases de datos relacionales***.
 - `mysql-connector-j`: Driver **JDBC** para conectar la aplicación con una base de datos **MySQL**. Se utiliza para establecer la comunicación entre la aplicación y la base de datos.
@@ -68,8 +68,8 @@
 - `spring-boot-starter-thymeleaf`: Incluye todo lo necesario para trabajar con **Thymeleaf**, un motor de plantillas para generar vistas dinámicas en aplicaciones web.
 - `spring-boot-starter-validation`: Proporciona soporte para la validación de datos mediante anotaciones estándar como `@Valid` o `@NotNull`, facilitando la validación en controladores y entidades.
 
-<h1 align="center">'application.properties' y 'Application'</h1>
-<h2>application.properties</h2>
+<h1 align="center"><ins>'application.properties' y 'Application'</ins></h1>
+<h2><ins>application.properties</ins></h2>
 <p>Este archivo contiene la configuración de la aplicación <b>Spring Boot</b>, permitiendo personalizar su comportamiento sin modificar el código fuente</p>
 
 ```properties
@@ -85,7 +85,7 @@ spring.jpa.show-sql=true
 spring.jpa.hibernate.ddl-auto=update
 ```
 
-<h3>Funciones principales:</h3>
+<h3><ins>Funciones principales</ins>:</h3>
 
 - Configuración del nombre de la aplicación:
   - `spring.application.name=1-springboot-mvc`: Define el nombre de la aplicación dentro del contexto de **Spring**.
@@ -102,7 +102,7 @@ spring.jpa.hibernate.ddl-auto=update
   - `spring.jpa.show-sql=true` → Muestra las consultas **SQL** ejecutadas en la consola.
   - `spring.jpa.hibernate.ddl-auto=update` → Permite que **Hibernate** actualice automáticamente la estructura de la base de datos.
 
-<h2>Application.java</h2>
+<h2><ins>Application.java</ins></h2>
 <p>Esta es la clase principal de la aplicación <b>Spring Boot</b>. Su función es iniciar la aplicación y configurar automáticamente todos los componentes de <b>Spring</b>.</p>
 
 ```java
@@ -119,7 +119,7 @@ public class Application {
 }
 ```
 
-<h3>Funciones principales:</h3>
+<h3><ins>Funciones principales</ins>:</h3>
 
 - `@SpringBootApplication`
   - Indica que esta es la clase de inicio de **Spring Boot**.
@@ -130,11 +130,11 @@ public class Application {
   - Llama a `SpringApplication.run(Application.class, args);`
   - Esto inicia el contexto de **Spring** y arranca el servidor web embebido (**Tomcat** por defecto).
 
-<h1 align="center">Controlador (UserController)</h1>
+<h1 align="center"><ins>Controlador (UserController)<ins></h1>
 
 La clase `UserController` es un controlador Spring MVC que gestiona las operaciones relacionadas con la entidad `User`. Su función principal es proporcionar puntos de acceso para listar, crear, editar y eliminar usuarios. Este controlador también administra las vistas correspondientes para cada operación y utiliza `SessionAttributes` para mantener datos temporales de usuario durante la sesión.
 
-<h3>Anotaciones en la clase UserController</h3>
+<h3><ins>Anotaciones en la clase UserController</ins></h3>
 
 - `@Controller`
   - Significado:
@@ -157,7 +157,7 @@ La clase `UserController` es un controlador Spring MVC que gestiona las operacio
 <h3>Clase 'Model'</h3>
 <p>La clase `Model` en Spring MVC tiene la función principal de <b>almacenar atributos que se pasan a la vista</b> (generalmente un archivo de plantilla como un archivo HTML con <b>Thymeleaf</b>). Esta clase proporciona una forma de agregar datos a la vista y es utilizada con frecuencia en los <b>controladores</b> para enviar información al frontend.</p>
 
-<h1 align="center">Estructura del Proyecto</h1>
+<h1 align="center"><ins>Estructura del Proyecto</ins></h1>
 
 - ***src.main***
   - ***java***
