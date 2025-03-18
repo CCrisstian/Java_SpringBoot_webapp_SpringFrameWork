@@ -1,4 +1,4 @@
-<h1 align="center"><ins>Spring Boot</ins></h1>
+<h1 align="center">Spring Boot</h1>
 <p><b>Spring Boot</b> es un framework basado en Spring que simplifica el desarrollo de aplicaciones <b>Java</b>, especialmente aplicaciones web y servicios RESTful. Su objetivo principal es reducir la complejidad de configuración manual, proporcionando una forma rápida y eficiente de crear aplicaciones robustas y escalables.</p>
 
 <p>En programación, un <b>'framework'</b> es un conjunto de herramientas, bibliotecas y buenas prácticas diseñadas para facilitar el desarrollo de software. Proporciona una estructura predefinida sobre la cual los desarrolladores pueden construir sus aplicaciones sin tener que escribir todo desde cero.</p>
@@ -28,7 +28,7 @@
 - <b>Microservicios</b>: Es ideal para el desarrollo de arquitecturas de microservicios por su facilidad de configuración y despliegue independiente.
 - <b>Aplicaciones empresariales</b>: Desarrollo de sistemas complejos con acceso a bases de datos, mensajería, y más.
 
-<h1 align="center"><ins>Spring Framework</ins></h1>
+<h1 align="center">Spring Framework</h1>
 <p><b>Spring Framework</b> es un framework de código abierto para el desarrollo de aplicaciones Java empresariales. Es modular y versátil, diseñado para simplificar la creación de aplicaciones robustas, escalables y fáciles de mantener, ofreciendo herramientas para resolver problemas comunes en el desarrollo empresarial.</p>
 
 <h3><ins>Características principales</ins>:</h3>
@@ -57,7 +57,7 @@
 | **Dependencias**          | Se deben seleccionar y configurar manualmente.| Incluye dependencias predefinidas (*Starters*). |
 | **Inicio rápido**         | Menos optimizado para proyectos pequeños.     | Ideal para proyectos rápidos o microservicios.  |
 
-<h1 align="center"><ins>pom.xml (dependencies)</ins></h1>
+<h1 align="center">pom.xml (dependencies)</h1>
 
 - `spring-boot-starter-data-jpa`: Proporciona soporte para trabajar con **JPA** (Java Persistence API). Incluye herramientas para implementar repositorios y gestionar la persistencia de datos con ***bases de datos relacionales***.
 - `mysql-connector-j`: Driver **JDBC** para conectar la aplicación con una base de datos **MySQL**. Se utiliza para establecer la comunicación entre la aplicación y la base de datos.
@@ -68,8 +68,8 @@
 - `spring-boot-starter-thymeleaf`: Incluye todo lo necesario para trabajar con **Thymeleaf**, un motor de plantillas para generar vistas dinámicas en aplicaciones web.
 - `spring-boot-starter-validation`: Proporciona soporte para la validación de datos mediante anotaciones estándar como `@Valid` o `@NotNull`, facilitando la validación en controladores y entidades.
 
-<h1 align="center"><ins>'application.properties' y 'Application'</ins></h1>
-<h2><ins>application.properties</ins></h2>
+<h1 align="center">'application.properties' y 'Application'</h1>
+<h2>application.properties</h2>
 <p>Este archivo contiene la configuración de la aplicación <b>Spring Boot</b>, permitiendo personalizar su comportamiento sin modificar el código fuente</p>
 
 ```properties
@@ -102,7 +102,7 @@ spring.jpa.hibernate.ddl-auto=update
   - `spring.jpa.show-sql=true` → Muestra las consultas **SQL** ejecutadas en la consola.
   - `spring.jpa.hibernate.ddl-auto=update` → Permite que **Hibernate** actualice automáticamente la estructura de la base de datos.
 
-<h2><ins>Application.java</ins></h2>
+<h2>Application.java</h2>
 <p>Esta es la clase principal de la aplicación <b>Spring Boot</b>. Su función es iniciar la aplicación y configurar automáticamente todos los componentes de <b>Spring</b>.</p>
 
 ```java
@@ -130,7 +130,7 @@ public class Application {
   - Llama a `SpringApplication.run(Application.class, args);`
   - Esto inicia el contexto de **Spring** y arranca el servidor web embebido (**Tomcat** por defecto).
 
-<h1 align="center"><ins>Controlador (UserController)<ins></h1>
+<h1 align="center">Controlador (UserController)</h1>
 
 La clase `UserController` es un controlador Spring MVC que gestiona las operaciones relacionadas con la entidad `User`. Su función principal es proporcionar puntos de acceso para listar, crear, editar y eliminar usuarios. Este controlador también administra las vistas correspondientes para cada operación y utiliza `SessionAttributes` para mantener datos temporales de usuario durante la sesión.
 
@@ -157,7 +157,7 @@ La clase `UserController` es un controlador Spring MVC que gestiona las operacio
 <h3>Clase 'Model'</h3>
 <p>La clase `Model` en Spring MVC tiene la función principal de <b>almacenar atributos que se pasan a la vista</b> (generalmente un archivo de plantilla como un archivo HTML con <b>Thymeleaf</b>). Esta clase proporciona una forma de agregar datos a la vista y es utilizada con frecuencia en los <b>controladores</b> para enviar información al frontend.</p>
 
-<h1 align="center"><ins>Estructura del Proyecto</ins></h1>
+<h1 align="center">Estructura del Proyecto</h1>
 
 - ***src.main***
   - ***java***
