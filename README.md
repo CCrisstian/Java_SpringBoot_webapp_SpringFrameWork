@@ -136,6 +136,14 @@ La clase `UserController` es un ***controlador*** **Spring MVC** que gestiona la
 
 <h3><ins>Anotaciones en la clase 'UserController'</ins></h3>
 
+```java
+@Controller
+@RequestMapping("/users")
+@SessionAttributes({"user"})
+public class UserController {
+
+}
+```
 - `@Controller`
   - **Significado**: Esta anotación marca la clase como un ***controlador*** **Spring MVC**. Indica que la clase ***maneja solicitudes web y devuelve vistas o datos como respuesta***.
   - **Funcionamiento**: Spring detecta esta clase durante el escaneo del contexto y la registra como un componente que ***gestiona las solicitudes HTTP***.
@@ -145,9 +153,120 @@ La clase `UserController` es un ***controlador*** **Spring MVC** que gestiona la
   - **Significado**: Indica que el atributo especificado (en este caso, `"user"`) se almacenará en la **sesión HTTP** mientras dure la interacción del **usuario** con el ***controlador***.
   - **Funcionamiento**: Los datos almacenados en la **sesión** están disponibles entre **solicitudes HTTP** en un contexto temporal, lo cual es útil para mantener información mientras el usuario interactúa con formularios. Cuando se llama a `SessionStatus.setComplete()`, el atributo almacenado en la sesión es eliminado.
 
-<h3><ins>Métodos de la clase 'UserController'</ins></h3>
+<h3><ins>Anotaciones @GetMapping y @PostMapping</ins></h3>
 
+- `@GetMapping`: Anotación utilizada para mapear **solicitudes HTTP GET** a un ***método*** del **controlador**. Se usa generalmente para ***obtener y mostrar información en una vista***, como cargar formularios o listar datos.
+- `@PostMapping`: Anotación utilizada para mapear **solicitudes HTTP POST** a un ***método*** del **controlador**. Se emplea principalmente para ***enviar datos al servidor***, como procesar formularios o realizar operaciones de creación y actualización en la base de datos.
 
+<h3><ins>Atributos y Métodos de la clase 'UserController'</ins></h3>
+
+- `service`
+```java
+    private final UserService service;
+
+    public UserController(UserService service) { /*Para inyectar de forma automática UserService*/
+        this.service = service;
+    }
+```
+**<ins>Descripción</ins>**: Instancia de `UserService` que gestiona la lógica de negocio y el acceso a la **Base de Datos** de **usuarios**. Se inyecta automáticamente mediante el constructor.
+
+- `view(Model model)`
+```java
+    @GetMapping({"/view", "/another"})
+    public String view(Model model) {
+        model.addAttribute("title", "1 - Spring Boot - MVC");
+        model.addAttribute("message", "Esta es una aplicación de ejemplo usando Spring Boot!!!");
+        model.addAttribute("user", new User("Cristian", "Cirstaldo"));
+        return "view";
+    }
+```
+**<ins>Descripción</ins>**: El método `view(Model model)` maneja las **solicitudes GET** a las rutas `"/view"` y `"/another"`, utilizando el objeto `Model` para agregar atributos como `title`, `message` y un objeto `User`. Luego, retorna el nombre de la **vista** `view`, que será renderizada con **Thymeleaf**. En **Spring Boot** con **Thymeleaf**, ***el valor de retorno debe coincidir con el nombre de la plantilla sin la extensión .html***.
+
+- `list(Model model)`
+```java
+    @GetMapping
+    public String list(Model model) {
+        model.addAttribute("title", "Listado de Usuarios");
+        model.addAttribute("users", service.findAll());
+        return "list";
+    }
+```
+**<ins>Descripción</ins>**: El método `list(Model model)` maneja las **solicitudes GET** a la raíz de la aplicación (`http://localhost:8080/`), utilizando el objeto `Model` para agregar los **atributos** `title`, con el título de la página, y `users`, que contiene la lista de usuarios obtenida mediante el método `findAll()` del atributo `service`. Luego, retorna el nombre de la vista `list`, que será renderizada con **Thymeleaf**.
+
+- `String form(Model model)`
+```java
+    @GetMapping("/form")
+    public String form(Model model) {
+        model.addAttribute("title", "Crear Usuario");
+        model.addAttribute("user", new User());
+        return "form";
+    }
+```
+**<ins>Descripción</ins>**: El método `form(Model model)` maneja las **solicitudes GET** a la ruta `"/form"`, ***permitiendo visualizar el formulario para crear un nuevo usuario***. Utiliza el objeto `Model` para agregar los **atributos** `title`, con el título de la página, y `user`, ***que es una nueva instancia de*** `User`. Luego, retorna el nombre de la vista `form`, que será renderizada con **Thymeleaf**.
+
+- `form(@PathVariable Long id, Model model, RedirectAttributes redirect)`
+```java
+    @GetMapping("/form/{id}")   /*form se 'visualiza' con el método Get pero en este caso con el objetivo de 'editar'*/
+    public String form(@PathVariable Long id, Model model, RedirectAttributes redirect) {
+
+        Optional<User> optionalUser = service.finById(id);
+
+        if (optionalUser.isPresent()) {
+            model.addAttribute("title", "EDITAR Usuario");
+            model.addAttribute("user", optionalUser.get());
+            return "form";
+        } else {
+            redirect.addFlashAttribute("error",
+                    "El usuario con el id: " + id + " NO EXISTE en la Base de Datos");
+            return "redirect:/users";
+        }
+    }
+```
+
+- `form(@Valid User user, BindingResult result, Model model, RedirectAttributes redirect, SessionStatus status)`
+```java
+    @PostMapping
+    public String form(@Valid User user, BindingResult result, Model model, RedirectAttributes redirect, SessionStatus status) {
+
+        if (result.hasErrors()) {
+            model.addAttribute("title", "Validando Formulario");
+            return "form";
+        }
+
+        String message = user.getId() != null && user.getId() > 0 ?
+                "El usuario: " + user.getName() + " se ha ACTUALIZADO con éxito!"
+                :"El usuario: " + user.getName() + " se ha CREADO con éxito!";
+
+        service.save(user);
+        status.setComplete();
+        redirect.addFlashAttribute("success", message);
+        return "redirect:/users";
+    }
+```
+**<ins>Descripción</ins>**: El método `form(User user, BindingResult result, Model model, RedirectAttributes redirect, SessionStatus status)` maneja las **solicitudes POST**, permitiendo ***procesar el formulario de creación o actualización de un usuario***. Si el objeto `user` contiene ***errores de validación***, se regresa a la vista `form` con un título de validación. Si los datos son correctos, el usuario se guarda en la **Base de Datos** y se genera un mensaje de éxito, diferenciando entre creación y actualización según el valor de `id`. Luego, ***se marca la sesión como completa*** y se redirige a la vista de listado de usuarios con un mensaje de confirmación.
+El método también utiliza `status.setComplete();`, que ***finaliza la sesión de la conversación*** en **Spring MVC** cuando se usa la anotación `@SessionAttributes`. Esto garantiza que los datos del usuario no queden almacenados en la sesión después de completar la operación, evitando posibles inconsistencias o reutilización de datos en futuras solicitudes.
+Finalmente, se redirige a la dirección principal con un mensaje de confirmación.
+
+- `delete(@PathVariable Long id, RedirectAttributes redirect)`
+```java
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable Long id, RedirectAttributes redirect) {
+
+        Optional<User> optionalUser = service.finById(id);
+
+        if (optionalUser.isPresent()) {
+            service.remove(id);
+            redirect.addFlashAttribute("success",
+                    "El usuario: " + optionalUser.get().getName() + " se ha ELIMINADO con éxito!");
+            return "redirect:/users";
+        }
+
+        redirect.addFlashAttribute("error",
+                "El usuario con el id: " + optionalUser.get().getId() + " NO EXISTE en el sistema");
+        return "redirect:/users";
+    }
+```
+<ins>Descripción</ins>: El método `delete(@PathVariable Long id, RedirectAttributes redirect)` maneja las **solicitudes GET** para eliminar un usuario basado en su `id`, ***pasando este valor como parámetro en la URL***. Si el usuario con el `id` especificado existe en la **Base de Datos**, se elimina y se agrega un mensaje de éxito con el nombre del usuario a los atributos de redirección. Luego, se redirige a la vista de listado de usuarios (`/users`). Si el usuario no existe, se agrega un mensaje de error y también se redirige a la misma vista. Esta operación asegura que, después de realizar la **eliminación**, la información más actualizada de los usuarios se muestre al usuario final.
 
 <h3>Clase 'Model'</h3>
 <p>La clase `Model` en Spring MVC tiene la función principal de <b>almacenar atributos que se pasan a la vista</b> (generalmente un archivo de plantilla como un archivo HTML con <b>Thymeleaf</b>). Esta clase proporciona una forma de agregar datos a la vista y es utilizada con frecuencia en los <b>controladores</b> para enviar información al frontend.</p>
