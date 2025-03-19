@@ -8,10 +8,8 @@ import java.util.Optional;
 public interface UserService {
 
     List<User> findAll();
-
     Optional<User> finById(Long id);
-
     User save(User user);
-
     void remove(Long id);
+
 }
