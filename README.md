@@ -1,5 +1,20 @@
+<h1 align="center">Java + Spring Boot</h1>
+<p>Este es mi primer proyecto utilizando <b>Spring Boot</b>, y me ha servido como una excelente introducción al framework. El objetivo de este proyecto es aplicar operaciones <b>CRUD</b> (Crear, Leer, Actualizar, Eliminar) a una <b>Base de Datos</b> de usuarios, utilizando las herramientas y tecnologías que <b>Spring Boot</b> proporciona para desarrollar aplicaciones web de manera rápida y eficiente.</p>
+
+<h2><ins>Descripción del Proyecto</ins></h2>
+<p>El proyecto implementa una <b>API RESTful</b> que permite gestionar una <b>Base de Datos</b> de usuarios, realizando operaciones <b>CRUD</b> sobre los datos. La <b>Base de Datos</b> utilizada es <b>MySQL</b> y la interfaz del sistema está generada dinámicamente con <b>Thymeleaf</b>, lo que facilita la creación de vistas en el lado del servidor.</p>
+
+<h2><ins>Características Principales del Proyecto</ins></h2>
+
+- **Operaciones CRUD**: Implementación de operaciones para **crear**, **leer**, **actualizar** y **eliminar** usuarios desde una **Base de Datos MySQL** a través de una **API RESTful**.
+- **Interfaz Web Dinámica**: Uso de **Thymeleaf** para renderizar vistas dinámicas y hacer la interfaz amigable para el usuario.
+- **Validación de Datos**: **Spring Validation** se utiliza para garantizar que los datos ingresados por los usuarios sean válidos y correctos.
+- **Seguridad Básica**: Implementación de **Spring Security** para asegurar que solo los usuarios autorizados puedan realizar ciertas operaciones.
+
+<h2><ins>Imagenes del Proyecto</ins></h2>
+
 <h1 align="center">Spring Boot</h1>
-<p><b>Spring Boot</b> es un framework basado en Spring que simplifica el desarrollo de aplicaciones <b>Java</b>, especialmente aplicaciones web y servicios RESTful. Su objetivo principal es reducir la complejidad de configuración manual, proporcionando una forma rápida y eficiente de crear aplicaciones robustas y escalables.</p>
+<p><b>Spring Boot</b> es un framework basado en <b>Spring</b> que simplifica el desarrollo de aplicaciones <b>Java</b>, especialmente aplicaciones web y servicios RESTful. Su objetivo principal es reducir la complejidad de configuración manual, proporcionando una forma rápida y eficiente de crear aplicaciones robustas y escalables.</p>
 
 <p>En programación, un <b>'framework'</b> es un conjunto de herramientas, bibliotecas y buenas prácticas diseñadas para facilitar el desarrollo de software. Proporciona una estructura predefinida sobre la cual los desarrolladores pueden construir sus aplicaciones sin tener que escribir todo desde cero.</p>
 
