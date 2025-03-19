@@ -130,29 +130,24 @@ public class Application {
   - Llama a `SpringApplication.run(Application.class, args);`
   - Esto inicia el contexto de **Spring** y arranca el servidor web embebido (**Tomcat** por defecto).
 
-<h1 align="center">Controlador (UserController)</h1>
+<h1 align="center">Clase Controlador (UserController)</h1>
 
-La clase `UserController` es un controlador Spring MVC que gestiona las operaciones relacionadas con la entidad `User`. Su función principal es proporcionar puntos de acceso para listar, crear, editar y eliminar usuarios. Este controlador también administra las vistas correspondientes para cada operación y utiliza `SessionAttributes` para mantener datos temporales de usuario durante la sesión.
+La clase `UserController` es un ***controlador*** **Spring MVC** que gestiona las operaciones relacionadas con la entidad `User`. Su función principal es proporcionar puntos de acceso para **listar**, **crear**, **editar** y **eliminar** usuarios. Este ***controlador*** también administra las **vistas** correspondientes para cada operación y utiliza `SessionAttributes` para mantener datos temporales de **usuario** durante la ***sesión***.
 
-<h3><ins>Anotaciones en la clase UserController</ins></h3>
+<h3><ins>Anotaciones en la clase 'UserController'</ins></h3>
 
 - `@Controller`
-  - Significado:
-    - Esta anotación marca la clase como un controlador Spring MVC. Indica que la clase maneja solicitudes web y devuelve vistas o datos como respuesta.
-  - Funcionamiento:
-    - Spring detecta esta clase durante el escaneo del contexto y la registra como un componente que gestiona las solicitudes HTTP.
-
+  - **Significado**: Esta anotación marca la clase como un ***controlador*** **Spring MVC**. Indica que la clase ***maneja solicitudes web y devuelve vistas o datos como respuesta***.
+  - **Funcionamiento**: Spring detecta esta clase durante el escaneo del contexto y la registra como un componente que ***gestiona las solicitudes HTTP***.
 - `@RequestMapping("/users")`
-  - Significado:
-    - Especifica la URL base o prefijo para las rutas que manejará esta clase. En este caso, todas las rutas definidas en la clase tendrán como prefijo `/users`.
-
+  - **Significado**: Especifica la ***URL base*** o prefijo para las rutas que manejará esta clase. En este caso, todas las rutas definidas en la clase tendrán como prefijo `/users`.
 - `@SessionAttributes({"user"})`
-  - Significado:
-    - Indica que el atributo especificado (en este caso, `"user"`) se almacenará en la sesión HTTP mientras dure la interacción del usuario con el controlador.
-  - Funcionamiento:
-    - Los datos almacenados en la sesión están disponibles entre solicitudes HTTP en un contexto temporal, lo cual es útil para mantener información mientras el usuario interactúa con formularios. Cuando se llama a `SessionStatus.setComplete()`, el atributo almacenado en la sesión es eliminado.
+  - **Significado**: Indica que el atributo especificado (en este caso, `"user"`) se almacenará en la **sesión HTTP** mientras dure la interacción del **usuario** con el ***controlador***.
+  - **Funcionamiento**: Los datos almacenados en la **sesión** están disponibles entre **solicitudes HTTP** en un contexto temporal, lo cual es útil para mantener información mientras el usuario interactúa con formularios. Cuando se llama a `SessionStatus.setComplete()`, el atributo almacenado en la sesión es eliminado.
 
 <h3><ins>Métodos de la clase 'UserController'</ins></h3>
+
+
 
 <h3>Clase 'Model'</h3>
 <p>La clase `Model` en Spring MVC tiene la función principal de <b>almacenar atributos que se pasan a la vista</b> (generalmente un archivo de plantilla como un archivo HTML con <b>Thymeleaf</b>). Esta clase proporciona una forma de agregar datos a la vista y es utilizada con frecuencia en los <b>controladores</b> para enviar información al frontend.</p>
