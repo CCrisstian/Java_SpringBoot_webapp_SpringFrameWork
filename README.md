@@ -13,64 +13,13 @@
 
 <h2><ins>Imagenes del Proyecto</ins></h2>
 
-<h1 align="center">Spring Boot</h1>
-<p><b>Spring Boot</b> es un framework basado en <b>Spring</b> que simplifica el desarrollo de aplicaciones <b>Java</b>, especialmente aplicaciones web y servicios RESTful. Su objetivo principal es reducir la complejidad de configuración manual, proporcionando una forma rápida y eficiente de crear aplicaciones robustas y escalables.</p>
-
-<p>En programación, un <b>'framework'</b> es un conjunto de herramientas, bibliotecas y buenas prácticas diseñadas para facilitar el desarrollo de software. Proporciona una estructura predefinida sobre la cual los desarrolladores pueden construir sus aplicaciones sin tener que escribir todo desde cero.</p>
-
-<h3><ins>Características principales de un <b>'framework'</b></ins>:</h3>
-
-- <b>Estructura predefinida</b>: Proporciona una arquitectura base para el desarrollo de aplicaciones.
-- <b>Código reutilizable</b>: Incluye funciones y bibliotecas listas para usar.
-- <b>Convención sobre configuración</b>: En muchos casos, sigue principios como "convención sobre configuración", lo que reduce la cantidad de configuraciones manuales necesarias.
-- <b>Modularidad</b>: Permite extender o modificar su funcionalidad con módulos o plugins.
-- <b>Automatización de tareas comunes</b>: Manejo de bases de datos, seguridad, autenticación, enrutamiento, etc.
-
-<p>Un <b>'framework'</b> no es lo mismo que una biblioteca, ya que impone una forma específica de organizar y estructurar el código, mientras que una biblioteca solo proporciona funcionalidades específicas sin imponer una estructura.</p>
-
-<h3><ins>Características principales de <b>'Spring Boot'</b></ins>:</h3>
-
-- <b>Configuración automática (Auto-Configuration)</b>: Configura automáticamente los componentes de una aplicación en función de las dependencias presentes en el proyecto.
-- <b>Servidor embebido</b>: Incluye servidores como Tomcat, Jetty o Undertow, lo que elimina la necesidad de desplegar manualmente aplicaciones en un servidor externo.
-- <b>Sistema de dependencias simplificado</b>: Utiliza Spring Boot Starter Dependencies para incluir configuraciones predefinidas según las necesidades del proyecto.
-- <b>Soporte para pruebas</b>: Integra herramientas para realizar pruebas unitarias y de integración fácilmente.
-- <b>Creación rápida</b>: Genera proyectos iniciales con configuraciones básicas a través de Spring Initializr.
-
-<h3><ins>¿Para qué se usa?</ins></h3>
-
-- <b>Aplicaciones web</b>: Desarrollo de aplicaciones con interfaces dinámicas y backend robusto.
-- <b>Servicios RESTful</b>: Creación de API para integrar sistemas o aplicaciones.
-- <b>Microservicios</b>: Es ideal para el desarrollo de arquitecturas de microservicios por su facilidad de configuración y despliegue independiente.
-- <b>Aplicaciones empresariales</b>: Desarrollo de sistemas complejos con acceso a bases de datos, mensajería, y más.
-
-<h1 align="center">Spring Framework</h1>
-<p><b>Spring Framework</b> es un framework de código abierto para el desarrollo de aplicaciones Java empresariales. Es modular y versátil, diseñado para simplificar la creación de aplicaciones robustas, escalables y fáciles de mantener, ofreciendo herramientas para resolver problemas comunes en el desarrollo empresarial.</p>
-
-<h3><ins>Características principales</ins>:</h3>
-
-- <b>Inyección de dependencias (DI)</b>: Implementa el patrón de inversión de control (IoC) para gestionar objetos y sus dependencias, lo que promueve un código modular y fácilmente testeable.
-- <b>Programación orientada a aspectos (AOP)</b>: Permite manejar funcionalidades transversales, como la seguridad, el registro de actividades y la gestión de transacciones, sin afectar el código principal.
-- <b>Acceso simplificado a bases de datos</b>: Proporciona herramientas como Spring JDBC y soporte para ORM como Hibernate.
-- <b>Flexibilidad y modularidad</b>: Es modular, por lo que se puede usar solo los componentes que se necesitan (por ejemplo, Spring MVC, Spring Data, Spring Security, etc.).
-- <b>Compatibilidad con múltiples entornos</b>: Funciona tanto para aplicaciones locales como distribuidas, en la nube o microservicios.
-
-<h3><ins>¿Para qué se usa?</ins></h3>
-
-- <b>Desarrollo de aplicaciones empresariales</b>: Proyectos complejos que requieren escalabilidad y robustez.
-- <b>Creación de APIs y servicios web</b>: Desarrollo de aplicaciones RESTful y SOAP.
-- <b>Microservicios</b>: Base para el desarrollo de arquitecturas modernas gracias a su soporte para Spring Boot.
-- <b>Gestión de transacciones y datos</b>: Manejo de bases de datos y operaciones transaccionales de manera segura.
-- <b>Seguridad</b>: Implementación de autenticación y autorización en aplicaciones con Spring Security.
-
-<h3><ins>Diferencias clave entre <b>'Spring Boot'</b> y <b>'Spring Framework'</b></ins></h3>
-
-| **Aspecto**               | **Spring Framework**                           | **Spring Boot**                                    |
-|---------------------------|-----------------------------------------------|--------------------------------------------------|
-| **Configuración**         | Manual (XML o anotaciones).                   | Automática con *Auto-Configuration*.            |
-| **Enfoque**               | Flexible y modular, pero con más esfuerzo.    | Opinión por defecto para empezar rápido.        |
-| **Servidor web**          | Externo (Tomcat, Jetty, etc.).                | Embebido por defecto.                           |
-| **Dependencias**          | Se deben seleccionar y configurar manualmente.| Incluye dependencias predefinidas (*Starters*). |
-| **Inicio rápido**         | Menos optimizado para proyectos pequeños.     | Ideal para proyectos rápidos o microservicios.  |
+![Pantalla principal](https://github.com/user-attachments/assets/10e32520-a93c-4664-86d4-f740cbb19ec0)
+![Creando un nuevo usuario](https://github.com/user-attachments/assets/401974bb-93f8-44b7-868a-a3a69dcab063)
+![Nuevo usuario creado con exito](https://github.com/user-attachments/assets/b41a03b9-0d4b-4bbc-a111-4b4a725b6a9f)
+![Editando un usuario](https://github.com/user-attachments/assets/655378a5-6d75-465d-a537-b2ef7c9ec294)
+![Usuario editado con exito](https://github.com/user-attachments/assets/a4446047-c90f-4ab1-8888-64bf52202484)
+![Eliminando un usuario](https://github.com/user-attachments/assets/0c0e6454-2735-46b8-86a8-5fc0fca49d32)
+![Usuario eliminado con exito](https://github.com/user-attachments/assets/d53082a0-2e55-42ce-b0cd-2ed96b8682a7)
 
 <h1 align="center">pom.xml (dependencies)</h1>
 
